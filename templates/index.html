@@ -3,9 +3,11 @@
 
 <head>
     <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
+    <script type="text/javascript" src="/static/script.js"></script>
 </head>
 
 <body>
+    <button id="myCoolButton">Click here!</button> 
     <h1>What's being reported about {{ topic }}?</h1>
     <div class='container'>
         {% for i in range(10) %}
@@ -15,6 +17,13 @@
         </div>
         {% endfor %}
     </div>
+    
+    <label for="name">Enter Search</label>
+
+<form id="form" onsubmit="return false;">
+    <input type="text" id="search" />
+    <input type="submit" onclick="searchArticle();" />
+</form>
 
 </body>
 

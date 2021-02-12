@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, render_template
 from nyt import get_article_data
+from markupsafe import escape
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -20,8 +21,14 @@ def hello_world():
         snippets=article_data['snippets'],
     )
 
+@app.route("/search/<user_text>")
+def showUser(user_text):
+    print(user_text)
+    return 'Success!'
+    
 app.run(
     host=os.getenv('IP', '0.0.0.0'),
     port=int(os.getenv('PORT', 8080)),
     debug=True
 )
+
