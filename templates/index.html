@@ -11,7 +11,7 @@
     <h1>What's being reported about {{ topic }}?</h1>
     <div class='container'>
         {% for i in range(10) %}
-        <div class='item'>
+        <div id = "headlines" class='item'>
             <p><b>{{ headlines[i] }}</b></p>
             <p>{{ snippets[i] }}</p>
         </div>
@@ -24,7 +24,6 @@
     <input type="text" id="search" />
     <input type="submit" onclick="searchArticle();" />
 </form>
-
 </body>
 
 </html>

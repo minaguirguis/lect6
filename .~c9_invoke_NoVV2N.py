@@ -25,13 +25,14 @@ userSearch = ""
 def showUser(user_text):
     print(user_text)
     userSearch = user_text
-   #getting new articles
-    keyword_query = userSearch 
-    article_data = get_article_data(keyword_query)
-    return article_data
+    return "Success!"
 
     
 
+keyword_query = userSearch 
+article_data = get_article_data(keyword_query)
+newHeadlines = article_data["headlines"]
+newSnippets = article_data["snippets"]
 
     
 app.run(
